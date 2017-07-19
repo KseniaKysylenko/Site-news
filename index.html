@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Интернет-магазин здорового питания и экологических продуктов «Сibum»</title>
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="bootstrap-3.3.7-dist/js/jquery.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+
+</head>
+<body>
+
+<div id="fly-cart">
+    <div class="container">
+        <div class="fly-block-logotype">
+            <a class="logotype" href="#"><img src="img/logocibum.png" alt="logotype"></a>
+
+            <div class="btn-group block-basket">
+                <div class="dropdown-toggle cart" data-toggle="dropdown" aria-expanded="false">
+                    <span class="text-backet">Товаров 0 (0.00 грн.)</span>
+                </div>
+                <div class="dropdown-menu popup_window">
+                    <p class="text-cart">Ваша корзина пуста!</p>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+
+<header>
+
+    <div id="header-info">
+        <div class="container">
+            <div class="info">
+                <ul class="block-info">
+                    <li><a href="#">О КОМПАНИИ</a></li>
+                    <li><a href="#">ДОСТАВКА И ОПЛАТА</a></li>
+                    <li><a href="#">СТАТЬИ</a></li>
+                    <li><a class="color" href="#">АКЦИИ</a></li>
+                </ul>
+                <div class="login-user">
+                    <img class="icon-user" src="img/account-ico.png" alt="Icon user">
+
+                    <div class="block-authorisation">
+                        <span data-toggle="modal" data-target="#myModal">РЕГИСТРАЦИЯ</span>
+                        <div id="myModal" class="modal fade" tabindex="-1">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                                        <h4 class="modal-title">Регистрация</h4>
+                                    </div>
+
+
+                                    <form class="modal-body">
+
+                                        <div class="form-group">
+                                            <label class="control-label">Имя:</label>
+                                            <input type="text" class="form-control" name="name" placeholder="Введите имя">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label">Адрес email:</label>
+                                            <input type="email" class="form-control" name="email" placeholder="Введите email">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label">Телефон:</label>
+                                            <input class="form-control" name="phone" placeholder="Введите телефон">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="control-label">Пароль:</label>
+                                            <input type="password" class="form-control" name="password" placeholder="Введите пароль">
+                                        </div>
+
+                                        <div class="check-in">
+                                            <button type="button" class="btn">Зарегистироваться</button>
+                                        </div>
+
+                                    </form>
+
+                                    <div id="result"></div>
+
+                                   </div>
+                            </div>
+                        </div>
+                        <span> / </span>
+                        <span class="autho">АВТОРИЗАЦИЯ</span>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="info-for-tel">
+                <div class="btn-group">
+                    <i class="dropdown-toggle fa fa-bars" data-toggle="dropdown" aria-expanded="false" aria-hidden="true"></i>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">О КОМПАНИИ</a></li>
+                        <li><a href="#">ДОСТАВКА И ОПЛАТА</a></li>
+                        <li><a href="#">СТАТЬИ</a></li>
+                        <li><a class="color" href="#">АКЦИИ</a></li>
+                    </ul>
+                </div>
+                <div class="btn-group">
+                    <img class="icon-user dropdown-toggle" data-toggle="dropdown" aria-expanded="false" src="img/account-ico.png" alt="Icon user">
+                    <ul class="dropdown-menu hide-text-user" role="menu">
+                        <li><a href="#">РЕГИСТРАЦИЯ</a></li>
+                        <li><a href="#">АВТОРИЗАЦИЯ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="header-logotype">
+        <div class="container">
+            <div class="block-logotype">
+                <a class="logotype" href="#"><img src="img/logocibum.png" alt="logotype"></a>
+                <span class="text-logotype">Полезные продукты с доставкой по Киеву</span>
+                <span class="tel">
+                    <span>(093) 933 33 44</span>
+                    <span>(098) 933 33 44</span>
+                </span>
+
+                <div class="btn-group block-basket">
+                    <div class="dropdown-toggle cart" data-toggle="dropdown" aria-expanded="false">
+                        <span class="text-backet">Товаров 0 (0.00 грн.)</span>
+                        <img src="img/cart.png" alt="backet">
+                    </div>
+                    <div class="dropdown-menu popup_window">
+                        <p class="text-cart">Ваша корзина пуста!</p>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</header>
+
+<div id="question-answer">
+    <span>Консультан он-лайн</span>
+    <i class="fa fa-comment-o"></i>
+</div>
+
+<div id="wrap-chat">
+    <div id="header-chat">
+        <i class="fa fa-user-circle-o" aria-hidden="true"></i>
+        <img class="close" src="img/cross.png" alt="cross">
+        <span>Мария Ткачук</span>
+        <span class="position">специалист по работе с клиентами</span>
+    </div>
+    <div id="main-chat">
+        <div class="block-message-cons">
+            <span class="triangle"></span>
+            <div class="text-consultant">
+                <p>Здравствуйте, могу ли я Вам чем-то помочь?</p>
+            </div>
+        </div>
+        <textarea name="text" id="text-user-chat" placeholder="Введите Ваш вопрос..." autofocus></textarea>
+    </div>
+</div>
+
+
+
+
+<div class="container">
+    <div id="wrap">
+        <aside id="sidebar">
+
+            <div class="form-search">
+                <input class="form-control input-lg" type="search" placeholder="Поиск">
+                <img class="search" src="img/search.png" alt="search">
+            </div>
+
+            <span class="cataloge">
+                <span>Каталог товаров</span>
+            </span>
+            <ul class="list-of-products">
+                <li>
+                    <a href="#">Фрукты
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+
+                    <ul class="child">
+                        <li>
+                            <a href="http://cibum.com.ua/frukty/jagody">Ягоды</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Овощи
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Молочные продукты
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Мясо / Яйца
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Морепродукты
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Хлеб
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+
+                    <ul class="child">
+                        <li>
+                            <a href="http://cibum.com.ua/frukty/jagody">Хлебцы</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Зелень Микрогрин
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Сухофрукты
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Напитки
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Бакалея
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Соусы и специи
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">Сладости
+                        <i class="glyphicon glyphicon-menu-right"></i>
+                    </a>
+                </li>
+            </ul>
+            <div class="social-icon">
+                <a class="ico-primary" href="https://vk.com/livecibum" title="VK" target="_blank">
+                    <i class="fa fa-vk"></i>
+                </a>
+                <a class="ico-danger" href="#" title="Facebook" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a class="ico-success" href="#" title="Twitter" target="_blank">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a class="ico-warning" href="#" title="Ok" target="_blank">
+                    <i class="fa fa-odnoklassniki"></i>
+                </a>
+                <a class="ico-info" href="#" title="Linkedin" target="_blank">
+                    <i class="fa fa-instagram"></i>
+                </a>
+            </div>
+
+        </aside>
+        <div id="main-block">
+            <div id="head">
+                <div class="form-search">
+                    <input class="form-control input-lg" type="search" placeholder="Поиск">
+                    <img class="search" src="img/search.png" alt="search">
+                </div>
+                <span>
+                    <img src="img/leaf.jpg" alt="leaf">
+                    Натурально
+                </span>
+                <span>
+                    <img src="img/heart.jpg" alt="heart">
+                    Полезно
+                </span>
+                <span>
+                    <img src="img/men.jpg" alt="men">
+                    Доступно
+                </span>
+            </div>
+            <div id="goods-day">
+                <div class="goods-day-header">
+                    <p>Товар дня</p>
+                </div>
+                <div id="timer_wrap">
+                    <span class="text-promotion">До конца акции осталось :</span>
+                    <div id="clock">
+                        <div id='day'>
+                            <div class="block-number">
+                                <p id='day0'></p>
+                                <p id='day1'></p>
+                            </div>
+                            <span>Дней</span>
+                        </div>
+                        <div class="delimiter">:</div>
+                        <div id='hour'>
+                            <div class="block-number">
+                                <p id='hour0'></p>
+                                <p id='hour1'></p>
+                            </div>
+                            <span>Часов</span>
+                        </div>
+                        <div class="delimiter">:</div>
+                        <div id='min'>
+                            <div class="block-number">
+                                <p id='min0'></p>
+                                <p id='min1'></p>
+                            </div>
+                            <span>Минут</span>
+                        </div>
+                        <div class="delimiter">:</div>
+                        <div id='sec'>
+                            <div class="block-number">
+                                <p id='sec0'></p>
+                                <p id='sec1'></p>
+                            </div>
+                            <span>Секунд</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="commodity promotions">
+                    <span class="lable-promotions">
+                        <span>Акция</span>
+                    </span>
+                    <img src="img/Баранина%20Лопатка.jpg" alt="fruits">
+                    <p>Баранина лопатка</p>
+                </div>
+                <div class="commodity promotions">
+                    <span class="lable-promotions">
+                        <span>Акция</span>
+                    </span>
+                    <img src="img/Куриное%20бедро.jpg" alt="fruits">
+                    <p>Курятина Бедро</p>
+                </div>
+                <div class="commodity promotions">
+                    <span class="lable-promotions">
+                        <span>Акция</span>
+                    </span>
+                    <img src="img/Хлебцы%20Raw%20Crisps%20%20Veggies.jpg" alt="fruits">
+                    <p>Хлебцы Raw Crisps классические (веганские) 80 г.</p>
+                </div>
+                <div class="commodity promotions">
+                    <span class="lable-promotions">
+                        <span>Акция</span>
+                    </span>
+                    <img src="img/Кефир%20Омега%20(О,%20В)-228x228.jpg" alt="fruits">
+                    <p>Кефир Омега 200 г. 4,5%</p>
+                </div>
+
+                <div class="commodity promotions hide-goods">
+                    <span class="lable-promotions">
+                        <span>Акция</span>
+                    </span>
+                    <img src="img/eggs.jpg" alt="fruits">
+                    <p>Перепелиные яйца 20 шт.</p>
+                </div>
+                <div class="commodity promotions hide-goods">
+                    <span class="lable-promotions">
+                        <span>Акция</span>
+                    </span>
+                    <img src="img/ИзюмЗолотистый.jpg" alt="fruits">
+                    <p>Изюм золотой</p>
+                </div>
+
+                <div class="goods-day-button">
+                    <p>Весь список</p>
+                </div>
+
+            </div>
+            <div id="list-goods">
+                <div class="commodity">
+                    <img src="img/fruits.png" alt="fruits">
+                    <p>Фрукты</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/vegetables.png" alt="vegetadles">
+                    <p>Овощи</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/milk_products.png" alt="milk_products">
+                    <p>Молочные продукты</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/meat.png" alt="meat">
+                    <p>Мясо / Яйца</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/fish.png" alt="fish">
+                    <p>Морепродукты</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/bread.png" alt="bread">
+                    <p>Хлеб</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/green_mikrohrin.png" alt="green_mikrohrin">
+                    <p>Зелень Микрогрин</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/dried.png" alt="dried">
+                    <p>Сухофрукты</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/beverages.png" alt="beverages">
+                    <p>Напитки</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/grocery.PNG" alt="grocery">
+                    <p>Бакалея</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/sauces_and_spices.png" alt="sauces_and_spices">
+                    <p>Соусы и специи</p>
+                </div>
+                <div class="commodity">
+                    <img src="img/sweets.png" alt="sweets">
+                    <p>Сладости</p>
+                </div>
+            </div>
+            <article>
+                <h3>Магазин натуральных продуктов «Сibum»</h3>
+                <p>«Сibum» - украинский <b>магазин натуральных продуктов</b>, предлагающий органическую пищу по разумным ценам с удобной доставкой по Киеву. В нашем ассортименте присутствуют лучшие образцы пищевой промышленности и сельского хозяйства, лишенные синтетических пестицидов, пищевых добавок искусственного происхождения и ГМО.</p>
+                <p>Политика интернет-магазина «Сibum» основана на трех важных соображениях: натуральность продуктов, польза для здоровья и доступность для клиентов.</p>
+                <div class="text-article">
+                    <h4>Экологически чистые продукты в Киеве – интернет-магазин «Сibum»</h4>
+                    <p><b>Экологичные продукты</b> – при нынешней, довольно скверной ситуации с экологией в стране и мире в целом - это настоящая находка для приверженцев здорового образа жизни. В современном мире продукты питания производятся массово, и, соответственно, на стандарты качества и экологичности уже давно никто не обращает внимания – ни покупатели, ни производители. Для большинства важны лишь цены.</p>
+
+                    <p>При таком засилье некачественной пищи в Украине магазин натуральных продуктов – это единственный
+                        формат, который может обеспечить вас полезной,вкусной и сравнительно недорогой едой. Покупая
+                        натуральные продукты в «Сibum», вы можете не сомневаться, что покупаете экологичный продукт –
+                        подобный тем, которые собирали у бабушки на огороде, которые помните еще с детства.</p>
+
+                    <p>Наверняка,вы как покупатель до конца не понимаете, что представляет собой здоровая,органическая пища, и чем она отличается от обычных овощей, фруктов и мяса, которые продаются в обычном супермаркете. В крупных магазинах столицы продаются овощи,фрукты и другие «полезные» продукты, предварительно прошедшие обработку,которые, а это доказали многочисленные общественные и профессиональные проверки, существенно отличаются от аналогичных продуктов, которые выращиваются собираются руками заботливого фермера, сумевшего организовать процесс в контексте соответствия стандартам качества и экологии. Еда из супермаркета – это пища, которую нужно продать вам, и для этого делается все возможное, а
+                        <b>экологически чистые продукты</b> из «Сibum» - это еда, созданная от начала до конца в естественных условиях, где не использовались синтетические минеральные удобрения, регуляторы роста, искусственные пищевые добавки, ГМО.</p>
+
+                    <p>В процессе переработки и подготовки экологически чистой продукции к «товарному состоянию»из каталога
+                        «Сibum» не применяются методы рафинирования, минерализации, добавления ароматизаторов искусственного
+                        происхождения и красителей, резко снижающих питательную ценность продуктов. Если вы заботитесь о
+                        своем здоровье, если возможность сделать собственный рацион как можно более естественным и
+                        натуральным для вас – не пустой звук, то интернет-магазин «Сibum» с радостью обеспечить вас
+                        необходимыми продуктами.</p>
+
+                    <h4>Натуральные продукты в ассортименте в Киев – интернет-магазин «Сibum»</h4>
+                    <p>В ассортименте «Сibum» - овощи и фрукты, молочная продукция, птица и яйца, мясные продукты, морепродукты, хлеб, сухофрукты, напитки, бакалея, соусы и специи,сладости и многое другое. Наш магазин сможет стать надежным и верным поставщиком экологичной продукции для вашего дома, офиса или ресторана. Всегда приятно иметь надежного партнера, соблюдающего высокие моральные и этические нормы в сотрудничестве клиентами, и, если вы цените такой подход – добро пожаловать в интернет-магазин эко продуктов.</p>
+
+                    <p>Буквально каждый день в нашем магазине новые поступления: любимые вами продукты для обеденного стола, на завтра и ужин всегда в наличии. Наши курьеры готовы оперативно доставить заказ по указанному адресу, так что без необходимых ресурсов для приготовления ваших блюд вы не останетесь. </p>
+
+                    <p><b>Купить натуральные продукты в Киеве</b>в «Сibum» очень просто: оцените наш каталог,выберите нужные вам позиции, уточните количество и отправляйте товары в корзину! Менеджер свяжется с вами в процессе оформления заказа, и вы вместе согласуете условия доставки и оплаты. </p>
+
+                    <h4>Интернет-магазин натуральных продуктов «Сibum» - качество и удобство</h4>
+
+                    <p>Питательные свойства, польза и ценность продуктов питания во многом обусловлена условиям их хранения и реализации. Не стоит ожидать от еды из супермаркета слишком многого,учитывая, в каких объемах и в каких условиях эти продукты доставляются в Киев ежедневно. По-настоящему полезные, органические продукты можно купить лишь в таких небольших, уютных магазинчиках, но с широким ассортиментом, как «Сibum».</p>
+
+
+                    <p>В нашем интернет-магазине представлены эко продукты эталонного качества. В ассортименте вы найдете
+                        товары как украинского, так и европейского производства. Вся продукция тщательно отбирается,
+                        проверяется и контролируется на предмет качества (состояния) на всех этапах. Действуют строгие нормы
+                        касательно транспортировки и хранения продуктов питания. </p>
+
+                    <p>И при этом купить органические продукты в Киеве у нас – очень просто, удобно и выгодно! Ненужно
+                        бегать в жаркую погоду по рынкам и магазинам столицы, толкаясь в очередях и тратя много часов на
+                        поиск всего необходимого на обеденный стол. Выбирайте натуральную пищу на сайте «Сibum», комфортно
+                        расположившись возле ноутбука: мы закажем, отберем и доставим для вас любые экологические чистые
+                        продукты. Оставайтесь здоровыми и счастливыми вместе с «Сibum»! </p>
+
+                </div>
+
+                <span class="btn-more">Больше</span>
+            </article>
+        </div>
+    </div>
+</div>
+
+<footer>
+    <div class="container">
+        <div id="footer-wrap">
+            <div class="footer-info">
+                <img src="img/logocibum.png" alt="logotype">
+                <span class="tel">
+                    <span>(093) 933 33 44</span>
+                    <span>(098) 933 33 44</span>
+                </span>
+            </div>
+            <div class="footer-text">
+                <span class="text">О КОМПАНИИ</span>
+                <span class="text">ДОСТАВКА И ОПЛАТА</span>
+            </div>
+        </div>
+    </div>
+
+</footer>
+
+
+
+</body>
+</html>2017-07-10 13:33:20 Оксана kseniya_kisilenk@mail.ru 0952224936 sdc d 
+2017-07-10 13:37:09 Оксана kseniya_kisilenk@mail.ru 0934232308 klkl 
+2017-07-10 13:48:07 Оксана kseniya_kisilenk@mail.ru 0934232308 fgnnhg 
+2017-07-10 14:33:25 jkh,kj kseniya_kisilenk@mail.ru 0952224936 cdcd 
+2017-07-10 14:36:50 Оксана kseniya_kisilenk@mail.ru 0934232308 xc c 
+2017-07-10 14:38:48 Оксана kseniya_kisilenk@mail.ru 0934232308 cc 
+2017-07-10 14:40:35 Оксана kseniya_kisilenk@mail.ru 0934232308 gg 
+2017-07-10 14:42:24 Оксана kseniya_kisilenk@mail.ru 0934232308 aaaaaaaa 
+2017-07-10 14:45:41 Оксана kseniya_kisilenk@mail.ru 0934232308 ffffffffff 

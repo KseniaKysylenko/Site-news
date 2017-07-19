@@ -1,0 +1,253 @@
+/**
+ * Created by Ksenya on 02.06.2017.
+ */
+
+$(document).ready(function(){
+
+    var inp_name = document.querySelector('input[name=name]');
+    var inp_email = document.querySelector('input[name=email]');
+    var inp_phone = document.querySelector('input[name=phone]');
+    var inp_password = document.querySelector('input[name=password]');
+
+    document.querySelector('.check-in').onclick = function(){
+        var params = 'name=' + inp_name.value + '&'
+            + 'email=' + inp_email.value + '&'
+            + 'phone=' + inp_phone.value + '&'
+            + 'password=' + inp_password.value;
+        ajaxPost(params);
+
+    };
+
+    function ajaxPost(params) {
+        var request = new XMLHttpRequest();
+        request.onreadystatechange = function(){
+            if(request.readyState == 4 && request.status == 200) {
+                if(request.responseText == '1'){
+                    document.querySelector('#result').innerHTML = 'Вы успешно пройшли регистрацию';
+                    document.querySelector('.modal-body').style.display = 'none';
+                    //if()
+                    console.log(document.querySelector('.block-authorisation').text('Привет' + inp_name.value))
+                    document.querySelector('.block-authorisation').style.display = 'none';
+
+                }else {
+                    document.querySelector('#result').innerHTML = request.responseText;
+                }
+
+            }
+        };
+
+        request.open('POST', 'form.php');
+        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        request.send(params);
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //Функция для красивого отображения времени.
+    function animation(vibor,param) {
+        vibor.html(param)
+            .css({'marginTop':'-20px','opacity':'0'})
+            .animate({'marginTop':'0px','opacity':'1'});
+    }
+
+    function get_timer() {
+
+        //Дата для обратного отсчета
+        var date_new = "October 22,2017 22:00";
+
+        //Объект даты для обратного отсчета
+        var date_t = new Date(date_new);
+        //Объект текущей даты
+        var date = new Date();
+        //Вычисляем сколько миллисекунд пройдет
+        //от текущей даты до даты отсчета времени
+        var timer = date_t - date;
+        //Проверяем не нужно ли закончить отсчет
+        //если дата отсчета еще не истекла, то количество
+        //миллисекунд в переменной date_t будет больше чем в переменной date
+        if(date_t > date) {
+
+            //Вычисляем сколько осталось дней до даты отсчета.
+            //Для этого количество миллисекунд до даты отсчета делим
+            //на количество миллисекунд в одном дне
+            var day = parseInt(timer/(60*60*1000*24));
+            //если полученное число меньше 10 прибавляем 0
+            if(day < 10) {
+                day = '0' + day;
+            }
+            //Приводим результат к строке
+            day = day.toString();
+
+            //Вычисляем сколько осталось часов до даты отсчета.
+            //Для этого переменную timer делим на количество
+            //миллисекунд в одном часе и отбрасываем дни
+            var hour = parseInt(timer/(60*60*1000))%24;
+            //если полученное число меньше 10 прибавляем 0
+            if(hour < 10) {
+                hour = '0' + hour;
+            }
+            //Приводим результат к строке
+            hour = hour.toString();
+
+            //Вычисляем сколько осталось минут до даты отсчета.
+            //Для этого переменную timer делим на количество
+            //миллисекунд в одной минуте и отбрасываем часы
+            var min = parseInt(timer/(1000*60))%60;
+            //если полученное число меньше 10 прибавляем 0
+            if(min < 10) {
+                min = '0' + min;
+            }
+            //Приводим результат к строке
+            min = min.toString();
+
+            //Вычисляем сколько осталось секунд до даты отсчета.
+            //Для этого переменную timer делим на количество
+            //миллисекунд в одной минуте и отбрасываем минуты
+            var sec = parseInt(timer/1000)%60;
+            //если полученное число меньше 10 прибавляем 0
+            if(sec < 10) {
+                sec = '0' + sec;
+            }
+            //Приводим результат к строке
+            sec = sec.toString();
+        }
+        else {
+            $("#clock").html("<span id='stop'>Отсчет закончен!!!</span>");
+        }
+        //alert(day + " : " + hour + " : " + min + " : " + sec);
+
+        //Выводим дни
+        //Проверяем какие предыдущие цифры времени должны вывестись на экран
+        //Для десятков дней
+        if(day[1] == 9 &&
+            hour[0] == 2 &&
+            hour[1] == 3 &&
+            min[0] == 5 &&
+            min[1] == 9 &&
+            sec[0] == 5 &&
+            sec[1] == 9) {
+            animation($("#day0"),day[0]);
+        }
+        else {
+            $("#day0").html(day[0]);
+        }
+        //Для единиц  дней
+        if(hour[0] == 2 &&
+            hour[1] == 3 &&
+            min[0] == 5 &&
+            min[1] == 9 &&
+            sec[0] == 5 &&
+            sec[1] == 9) {
+            animation($("#day1"),day[1]);
+        }
+        else {
+            $("#day1").html(day[1]);
+        }
+        //Выводим часы
+        //Проверяем какие предыдущие цифры времени должны вывестись на экран
+        //Для десятков часов
+        if(hour[1] == 3 &&
+            min[0] == 5 &&
+            min[1] == 9 &&
+            sec[0] == 5 &&
+            sec[1] == 9) {
+            animation($("#hour0"),hour[0]);
+        }
+        else {
+            $("#hour0").html(hour[0]);
+        }
+        //Для единиц часов
+        if(min[0] == 5 &&
+            min[1] == 9 &&
+            sec[0] == 5 &&
+            sec[1] == 9) {
+            animation($("#hour1"),hour[1]);
+        }
+        else {
+            $("#hour1").html(hour[1]);
+        }
+
+        //Выводим минуты
+        //Проверяем какие предыдущие цифры времени должны вывестись на экран
+        //Для десятков минут
+        if(min[1] == 9 &&
+            sec[0] == 5 &&
+            sec[1] == 9) {
+            animation($("#min0"),min[0]);
+        }
+        else {
+            $("#min0").html(min[0]);
+        }
+        //Для единиц минут
+        if(sec[0] == 5 && sec[1] == 9) {
+            animation($("#min1"),min[1]);
+        }
+        else {
+            $("#min1").html(min[1]);
+        }
+
+        //Выводим секунды
+        //Проверяем какие предыдущие цифры времени должны вывестись на экран
+        //Для десятков секунд
+        if(sec[1] == 9) {
+            animation($("#sec0"),sec[0]);
+        }
+        //Для единиц секунд
+        else {
+            $("#sec0").html(sec[0]);
+        }
+        animation($("#sec1"),sec[1]);
+        //Периодически вызываем созданную функцию,
+        //интервал вызова одна секунда(1000 милли секунд)
+        setTimeout(get_timer,1000);
+
+
+    }
+    get_timer();
+
+
+
+    $('.goods-day-button').on('click', function () {
+        var prom = $(this).siblings('.hide-goods');
+        $(this).text(prom .is(':visible') ? 'Весь список' : 'Скрыть');
+        prom.toggle('show')
+    });
+
+
+    $('.btn-more').on('click', function () {
+        var btn = $(this).siblings('.text-article');
+        $(this).text(btn .is(':visible') ? 'Больше' : 'Меньше');
+        btn.toggle('show')
+    });
+
+    $(window).scroll(function(){
+        var cart = $('#fly-cart');
+        if ( $(window).scrollTop() > 200 ){
+            cart.css('display','flex')
+        } else {
+            cart.css('display','none');
+        }
+    });
+
+    $('#question-answer').on('click', function(){
+        $(this).siblings('#wrap-chat').show('slow');
+        $('.close').on('click', function() {
+            $(this).parents('#wrap-chat').hide('slow');
+        })
+    })
+
+});
