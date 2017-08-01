@@ -11,7 +11,7 @@ body {
 #fly-cart {
   background: url("img/header-image.png") no-repeat;
   position: fixed;
-  z-index: 1;
+  z-index: 2;
   height: 60px;
   width: 100%;
   display: none;
@@ -85,7 +85,7 @@ header {
   background: url("img/header-image.png") no-repeat;
   display: flex;
   align-items: center;
-  height: 170px; }
+  padding: 20px 0; }
 
 .block-logotype {
   align-items: center;
@@ -123,18 +123,17 @@ header {
     width: 75px;
     height: 65px; }
 
-.popup_window .text-cart {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 70px;
-  font-size: 14px;
-  color: #000;
-  font-weight: normal;
-  margin: 0; }
-
-.container {
-  padding: 0; }
+.popup_window {
+  left: -35%; }
+  .popup_window .text-cart {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 14px;
+    color: #000;
+    font-weight: normal;
+    margin: 0; }
 
 #wrap {
   display: flex;
@@ -222,9 +221,7 @@ header {
       background-color: #37bc9b; }
 
 #main-block {
-  width: 75%;
-  display: flex;
-  flex-direction: column; }
+  width: 75%; }
   #main-block #head {
     display: flex;
     justify-content: space-between;
@@ -245,58 +242,63 @@ header {
     #main-block #head span {
       color: #546620;
       font-size: 18px; }
-  #main-block #goods-day {
+  #main-block #timer_wrap {
     display: flex;
-    flex-wrap: wrap;
-    margin: 10px 0 40px 0;
-    justify-content: center; }
-    #main-block #goods-day .goods-day-header {
-      width: 90%;
-      background-color: #732121;
+    align-items: center;
+    margin: 10px 0;
+    flex-direction: column; }
+    #main-block #timer_wrap .time-header {
+      background-color: #b25959;
       display: flex;
       justify-content: center;
-      align-items: center;
-      line-height: 30px;
-      border-radius: 10px 10px 0 0; }
-      #main-block #goods-day .goods-day-header p {
+      border-radius: 10px 10px 0 0;
+      box-shadow: 0 3px 2px 0 #b44646;
+      z-index: 1; }
+      #main-block #timer_wrap .time-header p {
         color: #f7f7fe;
-        font-size: 20px;
+        font-size: 18px;
         font-weight: 700;
         margin: 0 20px; }
-    #main-block #goods-day #timer_wrap {
+    #main-block #timer_wrap .timer {
       width: 100%;
-      background-color: #ff2e2e;
+      background-color: #e86f6f;
       display: flex;
       align-items: center;
       justify-content: space-around;
       border-radius: 50px; }
-      #main-block #goods-day #timer_wrap .text-promotion {
+      #main-block #timer_wrap .timer .text-promotion {
         font-weight: bold;
         font-size: 20px;
         color: #420e0e; }
-      #main-block #goods-day #timer_wrap #clock {
+      #main-block #timer_wrap .timer #clock {
         display: flex;
         align-items: center; }
-        #main-block #goods-day #timer_wrap #clock #day, #main-block #goods-day #timer_wrap #clock #hour, #main-block #goods-day #timer_wrap #clock #min, #main-block #goods-day #timer_wrap #clock #sec {
+        #main-block #timer_wrap .timer #clock #day, #main-block #timer_wrap .timer #clock #hour, #main-block #timer_wrap .timer #clock #min, #main-block #timer_wrap .timer #clock #sec {
           display: flex;
           flex-direction: column;
           align-items: center;
-          margin: 10px; }
-          #main-block #goods-day #timer_wrap #clock #day .block-number, #main-block #goods-day #timer_wrap #clock #hour .block-number, #main-block #goods-day #timer_wrap #clock #min .block-number, #main-block #goods-day #timer_wrap #clock #sec .block-number {
+          margin: 5px; }
+          #main-block #timer_wrap .timer #clock #day .block-number, #main-block #timer_wrap .timer #clock #hour .block-number, #main-block #timer_wrap .timer #clock #min .block-number, #main-block #timer_wrap .timer #clock #sec .block-number {
             display: flex;
-            background-color: #b92727;
-            border-radius: 14px; }
-            #main-block #goods-day #timer_wrap #clock #day .block-number p, #main-block #goods-day #timer_wrap #clock #hour .block-number p, #main-block #goods-day #timer_wrap #clock #min .block-number p, #main-block #goods-day #timer_wrap #clock #sec .block-number p {
-              margin: 4px;
-              font-size: 30px; }
-          #main-block #goods-day #timer_wrap #clock #day span, #main-block #goods-day #timer_wrap #clock #hour span, #main-block #goods-day #timer_wrap #clock #min span, #main-block #goods-day #timer_wrap #clock #sec span {
+            background-color: #e46060;
+            border-radius: 10px;
+            border: 1px solid #aa5c57; }
+            #main-block #timer_wrap .timer #clock #day .block-number span, #main-block #timer_wrap .timer #clock #hour .block-number span, #main-block #timer_wrap .timer #clock #min .block-number span, #main-block #timer_wrap .timer #clock #sec .block-number span {
+              margin: 2px;
+              font-size: 26px; }
+          #main-block #timer_wrap .timer #clock #day span, #main-block #timer_wrap .timer #clock #hour span, #main-block #timer_wrap .timer #clock #min span, #main-block #timer_wrap .timer #clock #sec span {
             color: white; }
-        #main-block #goods-day #timer_wrap #clock .delimiter {
+        #main-block #timer_wrap .timer #clock .delimiter {
           font-size: 24px;
           bottom: 15px;
           position: relative; }
+  #main-block #goods-day {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px 0;
+    justify-content: space-around; }
     #main-block #goods-day .promotions {
-      margin: 20px 8px;
+      margin-bottom: 10px;
       width: 23%;
       border-radius: 22px;
       border: 4px solid #732121;
@@ -359,11 +361,11 @@ header {
         margin: 0; }
   #main-block #list-goods {
     display: flex;
-    flex-wrap: wrap; }
+    flex-wrap: wrap;
+    justify-content: space-around; }
   #main-block .commodity {
     position: relative;
     cursor: pointer;
-    margin: 20px 16px 0 0;
     width: 32%; }
     #main-block .commodity img {
       width: 100%; }
@@ -374,8 +376,6 @@ header {
       font-size: 16px;
       width: 100%;
       text-align: center; }
-  #main-block .commodity:nth-last-child(3n+1) {
-    margin-right: 0; }
   #main-block .commodity:hover {
     border-radius: 50%;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.3); }
@@ -514,7 +514,7 @@ footer {
   #main-block #goods-day .promotions {
     width: 22%; }
 
-  #goods-day .goods-day-header {
+  #timer_wrap .time-header {
     width: 89%; }
 
   #main-block #list-goods .commodity {
@@ -529,9 +529,9 @@ footer {
   #main-block #head span {
     font-size: 17px; }
 
-  #main-block #goods-day .goods-day-header {
+  #main-block #timer_wrap .time-header {
     width: 82%; }
-  #main-block #goods-day #timer_wrap {
+  #main-block #timer_wrap .timer {
     flex-direction: column; }
   #main-block #goods-day .promotions {
     width: 30%; }
@@ -550,9 +550,7 @@ footer {
     display: none; }
 
   .container {
-    width: 100%;
-    padding-right: 15px;
-    padding-left: 15px; }
+    width: 100%; }
 
   #header-info .block-info li a,
   #header-info .login-user .block-authorisation {
@@ -567,17 +565,11 @@ footer {
   #main-block #head .form-search {
     width: 100%; }
 
-  #main-block #goods-day .goods-day-header {
+  #main-block #timer_wrap .time-header {
     width: 78%; }
-  #main-block #goods-day .promotions {
+  #main-block #timer_wrap .promotions {
     margin: 20px 5px;
-    width: 30%; }
-
-  #main-block #list-goods .commodity {
-    width: 28%; }
-    #main-block #list-goods .commodity p {
-      font-size: 12px;
-      bottom: 14px; } }
+    width: 30%; } }
 @media (max-width: 575px) {
   #fly-cart .fly-block-logotype .logotype img {
     width: 100%; }
@@ -591,6 +583,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    #header-info .info-for-tel .dropdown-menu li:hover {
+      background-color: red; }
     #header-info .info-for-tel .icon-user {
       cursor: pointer; }
     #header-info .info-for-tel .color {
@@ -606,25 +600,24 @@ footer {
       width: 100%; }
 
   .tel {
-    font-size: 16px; }
+    font-size: 14px; }
 
   .block-basket .text-backet {
     padding: 4px 2px; }
 
   #main-block {
     width: 100%; }
-    #main-block #goods-day .goods-day-header {
-      width: 78%; }
-    #main-block #goods-day .commodity p {
-      font-size: 14px; }
+    #main-block #timer_wrap .time-header {
+      width: 70%; }
     #main-block #goods-day .promotions {
-      margin: 20px 5px;
-      width: 30%; }
+      width: 46%; }
+    #main-block #list-goods .commodity {
+      width: 50%; }
 
   footer .footer-info img {
     width: 70%; }
 
   footer .footer-text .text {
-    font-size: 15px; } }
+    margin: 0; } }
 
 /*# sourceMappingURL=style.css.map */

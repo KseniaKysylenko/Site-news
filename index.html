@@ -50,7 +50,6 @@
                 </ul>
                 <div class="login-user">
                     <img class="icon-user" src="img/account-ico.png" alt="Icon user">
-
                     <div class="block-authorisation">
                         <span data-toggle="modal" data-target="#myModal">РЕГИСТРАЦИЯ</span>
                         <div id="myModal" class="modal fade" tabindex="-1">
@@ -89,20 +88,14 @@
 
                                     </form>
 
+                                    <div> id="result"></div>
 
-
-
-                                    
-
-                                    <div id="result"></div>
-
-                                   </div>
+                                </div>
                             </div>
                         </div>
                         <span> / </span>
                         <span class="autho">АВТОРИЗАЦИЯ</span>
                     </div>
-
                 </div>
             </div>
 
@@ -302,47 +295,50 @@
                     Доступно
                 </span>
             </div>
-            <div id="goods-day">
-                <div class="goods-day-header">
+            <div id="timer_wrap">
+                <div class="time-header">
                     <p>Товар дня</p>
                 </div>
-                <div id="timer_wrap">
+                <div class="timer">
                     <span class="text-promotion">До конца акции осталось :</span>
                     <div id="clock">
                         <div id='day'>
                             <div class="block-number">
-                                <p id='day0'></p>
-                                <p id='day1'></p>
+                                <span id='day0'></span>
+                                <span id='day1'></span>
                             </div>
                             <span>Дней</span>
                         </div>
                         <div class="delimiter">:</div>
                         <div id='hour'>
                             <div class="block-number">
-                                <p id='hour0'></p>
-                                <p id='hour1'></p>
+                                <span id='hour0'></span>
+                                <span id='hour1'></span>
                             </div>
                             <span>Часов</span>
                         </div>
                         <div class="delimiter">:</div>
                         <div id='min'>
                             <div class="block-number">
-                                <p id='min0'></p>
-                                <p id='min1'></p>
+                                <span id='min0'></span>
+                                <span id='min1'></span>
                             </div>
                             <span>Минут</span>
                         </div>
                         <div class="delimiter">:</div>
                         <div id='sec'>
                             <div class="block-number">
-                                <p id='sec0'></p>
-                                <p id='sec1'></p>
+                                <span id='sec0'></span>
+                                <span id='sec1'></span>
                             </div>
                             <span>Секунд</span>
                         </div>
                     </div>
                 </div>
 
+            </div>
+
+            <div id="goods-day">
                 <div class="commodity promotions">
                     <span class="lable-promotions">
                         <span>Акция</span>
