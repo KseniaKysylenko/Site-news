@@ -8,6 +8,7 @@
     <link href="bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="bootstrap-3.3.7-dist/js/jquery.js"></script>
+    <script src="mask.js" type="text/javascript"></script>
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <script src="script.js"></script>
 
@@ -51,54 +52,12 @@
                 <div class="login-user">
                     <img class="icon-user" src="img/account-ico.png" alt="Icon user">
                     <div class="block-authorisation">
-                        <span data-toggle="modal" data-target="#myModal">РЕГИСТРАЦИЯ</span>
-                        <div id="myModal" class="modal fade" tabindex="-1">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
-                                        <h4 class="modal-title">Регистрация</h4>
-                                    </div>
-
-
-                                    <form class="modal-body">
-
-                                        <div class="form-group">
-                                            <label class="control-label">Имя:</label>
-                                            <input type="text" class="form-control" name="name" placeholder="Введите имя">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label">Адрес email:</label>
-                                            <input type="email" class="form-control" name="email" placeholder="Введите email">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label">Телефон:</label>
-                                            <input class="form-control" name="phone" placeholder="Введите телефон">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label class="control-label">Пароль:</label>
-                                            <input type="password" class="form-control" name="password" placeholder="Введите пароль">
-                                        </div>
-
-                                        <div class="check-in">
-                                            <button type="button" class="btn">Зарегистироваться</button>
-                                        </div>
-
-                                    </form>
-
-                                    <div> id="result"></div>
-
-                                </div>
-                            </div>
-                        </div>
+                        <span data-toggle="modal" data-target="#myModal-regi">РЕГИСТРАЦИЯ</span>
                         <span> / </span>
-                        <span class="autho">АВТОРИЗАЦИЯ</span>
+                        <span data-toggle="modal" data-target="#myModal-author" class="autho">АВТОРИЗАЦИЯ</span>
                     </div>
                 </div>
             </div>
-
             <div class="info-for-tel">
                 <div class="btn-group">
                     <i class="dropdown-toggle fa fa-bars" data-toggle="dropdown" aria-expanded="false" aria-hidden="true"></i>
@@ -112,8 +71,8 @@
                 <div class="btn-group">
                     <img class="icon-user dropdown-toggle" data-toggle="dropdown" aria-expanded="false" src="img/account-ico.png" alt="Icon user">
                     <ul class="dropdown-menu hide-text-user" role="menu">
-                        <li><a href="#">РЕГИСТРАЦИЯ</a></li>
-                        <li><a href="#">АВТОРИЗАЦИЯ</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal-regi">РЕГИСТРАЦИЯ</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#myModal-author">АВТОРИЗАЦИЯ</a></li>
                     </ul>
                 </div>
             </div>
@@ -167,9 +126,6 @@
         <textarea name="text" id="text-user-chat" placeholder="Введите Ваш вопрос..." autofocus></textarea>
     </div>
 </div>
-
-
-
 
 <div class="container">
     <div id="wrap">
@@ -296,12 +252,11 @@
                 </span>
             </div>
             <div id="timer_wrap">
-                <div class="time-header">
-                    <p>Товар дня</p>
-                </div>
-                <div class="timer">
-                    <span class="text-promotion">До конца акции осталось :</span>
-                    <div id="clock">
+                <!--<div class="time-header">-->
+                    <!--<p>Товар дня</p>-->
+                <!--</div>-->
+                <span class="text-promotion">До конца акции осталось :</span>
+                <div id="clock">
                         <div id='day'>
                             <div class="block-number">
                                 <span id='day0'></span>
@@ -334,7 +289,6 @@
                             <span>Секунд</span>
                         </div>
                     </div>
-                </div>
 
             </div>
 
@@ -508,7 +462,81 @@
             </div>
         </div>
     </div>
-
 </footer>
+
+
+<!--Модальне вікно реєстрації-->
+<div id="myModal-regi" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Регистрация</h4>
+            </div>
+            <form class="modal-body">
+
+                <div class="form-group">
+                    <label class="control-label">Имя:</label>
+                    <input type="text" class="form-control name" name="name" placeholder="Введите имя">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Адрес email:</label>
+                    <input type="email" class="form-control email" name="email" placeholder="Введите email">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Телефон:</label>
+                    <input class="form-control phone" name="phone" placeholder="Введите телефон">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Пароль:</label>
+                    <input type="password" class="form-control password" name="password" placeholder="Введите пароль">
+                </div>
+
+                <div class="check-in">
+                    <button type="button" class="btn btn-primary">Зарегистироваться</button>
+                </div>
+
+                <div class="result-regi"></div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+<!--Модальне вікно авторизації-->
+
+<div id="myModal-author" class="modal fade" tabindex="-1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header"><button class="close" type="button" data-dismiss="modal">×</button>
+                <h4 class="modal-title">Авторизация</h4>
+            </div>
+            <form class="modal-body">
+
+                <div class="form-group">
+                    <label class="control-label">Телефон</label>
+                    <input class="form-control phone" name="phone" placeholder="Введите телефон">
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Пароль:</label>
+                    <input type="password" class="form-control password" name="password" placeholder="Введите пароль">
+                </div>
+
+                <div class="go-in">
+                    <button type="button" class="btn btn-primary">Войти</button>
+                </div>
+
+                <div class="result-regi"></div>
+            </form>
+
+        </div>
+    </div>
+</div>
+
+
+
 </body>
 </html>

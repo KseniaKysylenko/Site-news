@@ -58,28 +58,14 @@ header {
       width: 24px;
       height: 24px;
       margin-right: 10px; }
-    #header-info .login-user .block-authorisation {
+    #header-info .login-user .block-authorisation span {
       cursor: pointer; }
-      #header-info .login-user .block-authorisation .modal-content {
-        color: black; }
-        #header-info .login-user .block-authorisation .modal-content .form-group {
-          width: 100%;
-          display: flex;
-          margin-bottom: 10px;
-          align-items: center; }
-          #header-info .login-user .block-authorisation .modal-content .form-group .control-label {
-            width: 20%; }
-        #header-info .login-user .block-authorisation .modal-content .check-in {
-          display: flex;
-          justify-content: flex-end; }
-        #header-info .login-user .block-authorisation .modal-content #result {
-          margin: 20px;
-          font-size: 20px; }
-  #header-info .info-for-tel {
-    display: none; }
-    #header-info .info-for-tel .fa {
-      font-size: 20px;
-      cursor: pointer; }
+
+.info-for-tel {
+  display: none; }
+  .info-for-tel .fa {
+    font-size: 20px;
+    cursor: pointer; }
 
 #header-logotype {
   background: url("img/header-image.png") no-repeat;
@@ -243,62 +229,41 @@ header {
       color: #546620;
       font-size: 18px; }
   #main-block #timer_wrap {
+    width: 100%;
     display: flex;
     align-items: center;
-    margin: 10px 0;
-    flex-direction: column; }
-    #main-block #timer_wrap .time-header {
-      background-color: #b25959;
+    justify-content: space-around;
+    background-color: #660018;
+    border-radius: 10px;
+    margin: 10px 0; }
+    #main-block #timer_wrap .text-promotion {
+      font-weight: bold;
+      font-size: 20px;
+      color: wheat; }
+    #main-block #timer_wrap #clock {
       display: flex;
-      justify-content: center;
-      border-radius: 10px 10px 0 0;
-      box-shadow: 0 3px 2px 0 #b44646;
-      z-index: 1; }
-      #main-block #timer_wrap .time-header p {
-        color: #f7f7fe;
-        font-size: 18px;
-        font-weight: 700;
-        margin: 0 20px; }
-    #main-block #timer_wrap .timer {
-      width: 100%;
-      background-color: #e86f6f;
-      display: flex;
-      align-items: center;
-      justify-content: space-around;
-      border-radius: 50px; }
-      #main-block #timer_wrap .timer .text-promotion {
-        font-weight: bold;
-        font-size: 20px;
-        color: #420e0e; }
-      #main-block #timer_wrap .timer #clock {
+      align-items: center; }
+      #main-block #timer_wrap #clock #day, #main-block #timer_wrap #clock #hour, #main-block #timer_wrap #clock #min, #main-block #timer_wrap #clock #sec {
         display: flex;
-        align-items: center; }
-        #main-block #timer_wrap .timer #clock #day, #main-block #timer_wrap .timer #clock #hour, #main-block #timer_wrap .timer #clock #min, #main-block #timer_wrap .timer #clock #sec {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          margin: 5px; }
-          #main-block #timer_wrap .timer #clock #day .block-number, #main-block #timer_wrap .timer #clock #hour .block-number, #main-block #timer_wrap .timer #clock #min .block-number, #main-block #timer_wrap .timer #clock #sec .block-number {
-            display: flex;
-            background-color: #e46060;
-            border-radius: 10px;
-            border: 1px solid #aa5c57; }
-            #main-block #timer_wrap .timer #clock #day .block-number span, #main-block #timer_wrap .timer #clock #hour .block-number span, #main-block #timer_wrap .timer #clock #min .block-number span, #main-block #timer_wrap .timer #clock #sec .block-number span {
-              margin: 2px;
-              font-size: 26px; }
-          #main-block #timer_wrap .timer #clock #day span, #main-block #timer_wrap .timer #clock #hour span, #main-block #timer_wrap .timer #clock #min span, #main-block #timer_wrap .timer #clock #sec span {
-            color: white; }
-        #main-block #timer_wrap .timer #clock .delimiter {
-          font-size: 24px;
-          bottom: 15px;
-          position: relative; }
+        flex-direction: column;
+        align-items: center;
+        margin: 5px; }
+        #main-block #timer_wrap #clock #day .block-number span, #main-block #timer_wrap #clock #hour .block-number span, #main-block #timer_wrap #clock #min .block-number span, #main-block #timer_wrap #clock #sec .block-number span {
+          font-size: 26px; }
+        #main-block #timer_wrap #clock #day span, #main-block #timer_wrap #clock #hour span, #main-block #timer_wrap #clock #min span, #main-block #timer_wrap #clock #sec span {
+          color: white; }
+      #main-block #timer_wrap #clock .delimiter {
+        font-size: 24px;
+        bottom: 12px;
+        position: relative;
+        color: white; }
   #main-block #goods-day {
     display: flex;
     flex-wrap: wrap;
-    margin: 10px 0;
+    margin: 25px 0;
     justify-content: space-around; }
     #main-block #goods-day .promotions {
-      margin-bottom: 10px;
+      margin-bottom: 25px;
       width: 23%;
       border-radius: 22px;
       border: 4px solid #732121;
@@ -306,14 +271,14 @@ header {
       #main-block #goods-day .promotions .lable-promotions {
         border: 2px solid #732121;
         position: relative;
-        width: 88px;
+        width: 94px;
         background-color: #732121;
         transform: rotate(-45deg);
         display: flex;
         justify-content: center;
         align-items: center;
         top: 28px;
-        left: -4px;
+        left: -8px;
         height: 24px; }
         #main-block #goods-day .promotions .lable-promotions span {
           color: white;
@@ -510,12 +475,29 @@ footer {
       font-size: 15px;
       cursor: pointer; }
 
+.modal-content {
+  color: black; }
+  .modal-content .form-group {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    align-items: center; }
+    .modal-content .form-group .control-label {
+      width: 20%; }
+  .modal-content .check-in {
+    display: flex;
+    justify-content: flex-end; }
+
+.control-label {
+  font-weight: normal; }
+
+.go-in {
+  display: flex;
+  justify-content: flex-end; }
+
 @media (max-width: 1200px) {
   #main-block #goods-day .promotions {
     width: 22%; }
-
-  #timer_wrap .time-header {
-    width: 89%; }
 
   #main-block #list-goods .commodity {
     width: 31%; } }
@@ -529,9 +511,7 @@ footer {
   #main-block #head span {
     font-size: 17px; }
 
-  #main-block #timer_wrap .time-header {
-    width: 82%; }
-  #main-block #timer_wrap .timer {
+  #main-block #timer_wrap {
     flex-direction: column; }
   #main-block #goods-day .promotions {
     width: 30%; }
@@ -565,8 +545,6 @@ footer {
   #main-block #head .form-search {
     width: 100%; }
 
-  #main-block #timer_wrap .time-header {
-    width: 78%; }
   #main-block #timer_wrap .promotions {
     margin: 20px 5px;
     width: 30%; } }
@@ -607,8 +585,8 @@ footer {
 
   #main-block {
     width: 100%; }
-    #main-block #timer_wrap .time-header {
-      width: 70%; }
+    #main-block #timer_wrap {
+      flex-direction: column; }
     #main-block #goods-day .promotions {
       width: 46%; }
     #main-block #list-goods .commodity {

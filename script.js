@@ -4,46 +4,105 @@
 
 $(document).ready(function(){
 
-    var inp_name = document.querySelector('input[name=name]');
-    var inp_email = document.querySelector('input[name=email]');
-    var inp_phone = document.querySelector('input[name=phone]');
-    var inp_password = document.querySelector('input[name=password]');
+    //var inp_name = document.querySelector('input[name=name]');
+    //var inp_email = document.querySelector('input[name=email]');
+    //var inp_phone = document.querySelector('input[name=phone]');
+    //var inp_password = document.querySelector('input[name=password]');
+    //
+    //document.querySelector('.check-in').onclick = function(){
+    //    var params = 'name=' + inp_name.value + '&'
+    //        + 'email=' + inp_email.value + '&'
+    //        + 'phone=' + inp_phone.value + '&'
+    //        + 'password=' + inp_password.value;
+    //    ajaxPost(params);
+    //
+    //};
+    //
+    //function ajaxPost(params) {
+    //    var request = new XMLHttpRequest();
+    //    request.onreadystatechange = function(){
+    //        if(request.readyState == 4 && request.status == 200) {
+    //            if(request.responseText == '1'){
+    //                document.querySelector('#result').innerHTML = 'Вы успешно пройшли регистрацию';
+    //                document.querySelector('.modal-body').style.display = 'none';
+    //                //if()
+    //                console.log(document.querySelector('.block-authorisation').text('Привет' + inp_name.value))
+    //                document.querySelector('.block-authorisation').style.display = 'none';
+    //
+    //            }else {
+    //                document.querySelector('#result').innerHTML = request.responseText;
+    //            }
+    //
+    //        }
+    //    };
+    //
+    //    request.open('POST', 'form.php');
+    //    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //    request.send(params);
+    //}
 
-    document.querySelector('.check-in').onclick = function(){
-        var params = 'name=' + inp_name.value + '&'
-            + 'email=' + inp_email.value + '&'
-            + 'phone=' + inp_phone.value + '&'
-            + 'password=' + inp_password.value;
-        ajaxPost(params);
+    jQuery(function($){
+        //$("#date").mask("99/99/9999",{placeholder:"+38(050) 660-11-02"});
 
-    };
-
-    function ajaxPost(params) {
-        var request = new XMLHttpRequest();
-        request.onreadystatechange = function(){
-            if(request.readyState == 4 && request.status == 200) {
-                if(request.responseText == '1'){
-                    document.querySelector('#result').innerHTML = 'Вы успешно пройшли регистрацию';
-                    document.querySelector('.modal-body').style.display = 'none';
-                    //if()
-                    console.log(document.querySelector('.block-authorisation').text('Привет' + inp_name.value))
-                    document.querySelector('.block-authorisation').style.display = 'none';
-
-                }else {
-                    document.querySelector('#result').innerHTML = request.responseText;
+        $(".phone").mask("+38(999) 999-99-99");
+        $('.email').blur(function() {
+            if($(this).val() != '') {
+                var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
+                if(pattern.test($(this).val())){
+                    $(this).css({'border' : '2px solid #569b44'});
+                    $('.email').text('Верно');
+                } else {
+                    $(this).css({'border' : '2px solid #ff0000'});
+                    $('.email').text('Не верно');
                 }
-
+            } else {
+                $(this).css({'border' : '2px solid #ff0000'});
+                $('#result-regi').text('Поле email не должно быть пустым');
             }
-        };
+        });
+    });
+    $('.check-in').on('click', function(){
+        var modal  = $('#myModal-regi');
 
-        request.open('POST', 'form.php');
-        request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        request.send(params);
-    }
+        if (modal.find('.name').val() == '' || $('.email').val() == '' || $('.phone').val() == '' || $('.password').val() == '' ){
+            modal.find('.result-regi').text('Заполните все поля!');
+        }else {
 
+            var output =
+                '<div class="block-authorisation">'+
+                    '<span>' + modal.find('.name').val() + '</span>'+
+                    '<span> / </span>'+
+                    '<span class="logout">Выход</span>'+
+                '</div>';
 
+            $('.modal-body').text('Вы успешно пройшли регистрацию !');
 
+            $('.block-authorisation').hide(1000, function () {
+                $(this).html(output).show(1000);
+                $('.logout').on('click', function(){
+                    location.reload()
+                });
+            });
+        }
+    });
 
+    $('.go-in').on('click', function(){
+        var output =
+            '<div class="block-authorisation">'+
+                '<span>' + 'Привет дружище' + '</span>'+
+                '<span> / </span>'+
+                '<span class="logout">Выход</span>'+
+            '</div>';
+
+        $('.modal-body').text('Авторизация пройдена !');
+
+        $('.block-authorisation').hide(1000, function () {
+           $(this).html(output).show(1000);
+           $('.logout').on('click', function () {
+               location.reload()
+           });
+        });
+    });
 
 
 
@@ -218,8 +277,6 @@ $(document).ready(function(){
 
     }
     get_timer();
-
-
 
     $('.goods-day-button').on('click', function () {
         var prom = $(this).siblings('.hide-goods');
