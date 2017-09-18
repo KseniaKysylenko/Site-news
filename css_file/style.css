@@ -4,12 +4,12 @@
 
 @font-face {
   font-family: MyriadProBold;
-  src: url("fonts/MyriadPro/MyriadProRegular/MyriadProRegular.ttf"); }
+  src: url("../fonts/MyriadPro/MyriadProRegular/MyriadProRegular.ttf"); }
 body {
   font-family: "MyriadProBold", 'sans-serif'; }
 
 #fly-cart {
-  background: url("img/header-image.png") no-repeat;
+  background: url("../img/header-image.png") no-repeat;
   position: fixed;
   z-index: 2;
   height: 60px;
@@ -68,7 +68,7 @@ header {
     cursor: pointer; }
 
 #header-logotype {
-  background: url("img/header-image.png") no-repeat;
+  background: url("../img/header-image.png") no-repeat;
   display: flex;
   align-items: center;
   padding: 20px 0; }
@@ -448,7 +448,7 @@ header {
       resize: none; }
 
 footer {
-  background: url("img/header-image.png") no-repeat;
+  background: url("../img/header-image.png") no-repeat;
   border-top: 3px solid #dde2d0;
   color: #e2e2e2;
   margin-top: 30px;
