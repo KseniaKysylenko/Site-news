@@ -47,6 +47,7 @@ $(document).ready(function(){
         $(".phone").mask("+38(999) 999-99-99");
         $('.email').blur(function() {
             if($(this).val() != '') {
+                var a;
                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
                 if(pattern.test($(this).val())){
                     $(this).css({'border' : '2px solid #569b44'});
