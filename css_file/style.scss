@@ -106,7 +106,6 @@ header {
   display: flex;
   flex-direction: column;
   font-size: 20px;
-  cursor: pointer;
 }
 .block-basket {
   display: flex;
@@ -592,7 +591,6 @@ footer {
     .tel {
       font-weight: bold;
       font-size: 18px;
-      cursor: pointer;
     }
 
   }
@@ -602,6 +600,9 @@ footer {
       margin-right: 10px;
       font-size: 15px;
       cursor: pointer;
+    }
+    .text:hover {
+      text-decoration: underline;
     }
   }
 }
