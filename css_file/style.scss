@@ -634,7 +634,12 @@ footer {
     justify-content: space-between;
     align-items: center;
   }
-
+  .ok{
+    border: 2px solid #569b44;
+  }
+  .error{
+    border: 2px solid #ff0000;
+  }
 
 }
 //Кінець вікна реєстрації

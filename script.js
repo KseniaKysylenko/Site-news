@@ -64,21 +64,25 @@ $(document).ready(function(){
         $(".phone").mask("+38(999) 999-99-99");
         $('.email').blur(function() {
             if($(this).val() != '') {
-                var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
-                if(pattern.test($(this).val())){
-                    $(this).css({'border' : '2px solid #569b44'});
-                    $('.valid').text('Верно');
+                var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
+
+                if($(this).val().search(pattern) == 0){
+                    $('#submit').attr('disabled', false);
+                    $(this).addClass('ok');
+
                 } else {
-                    $(this).css({'border' : '2px solid #ff0000'});
-                    $('.valid').text('Не верно !');
-                    
+                    $('.valid').text('Введите корректный e-mail адрес');
+                   console.log($('#submit').attr('disabled', true)) ;
+                    $(this).removeClass('ok').addClass('error');
                 }
             } else {
-                $(this).css({'border' : '2px solid #ff0000'});
-                $('.valid').text('Поле email не должно быть пустым');
+                $('.valid').text('Поле email не должно быть пустым!');
+                $(this).addClass('error');
+                $('#submit').attr('disabled', true);
             }
         });
     });
+
     $('.check-in').on('click', function(){
         var modal  = $('#myModal-regi');
 
@@ -106,7 +110,7 @@ $(document).ready(function(){
     $('.go-in').on('click', function(){
         var output =
             '<div class="block-authorisation">'+
-                '<span>' + 'Привет дружище' + '</span>'+
+                '<span>' + 'Привет друг' + '</span>'+
                 '<span> / </span>'+
                 '<span class="logout">Выход</span>'+
             '</div>';
