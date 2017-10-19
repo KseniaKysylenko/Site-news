@@ -613,21 +613,29 @@ footer {
   .form-group {
     width: 100%;
     display: flex;
-    margin-bottom: 10px;
     align-items: center;
+    .block-mail {
+      width: 100%;
+      display: flex;
+    }
     .control-label {
       width: 20%;
     }
+    .valid {
+      width: 100%;
+      text-align: center;
+    }
+  }
+  .mail {
+    flex-direction: column;
   }
   .check-in {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
   }
 
-  //#result {
-  //  margin: 20px;
-  //  font-size: 20px;
-  //}
+
 }
 //Кінець вікна реєстрації
 
