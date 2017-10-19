@@ -480,13 +480,21 @@ footer {
   .modal-content .form-group {
     width: 100%;
     display: flex;
-    margin-bottom: 10px;
     align-items: center; }
+    .modal-content .form-group .block-mail {
+      width: 100%;
+      display: flex; }
     .modal-content .form-group .control-label {
       width: 20%; }
+    .modal-content .form-group .valid {
+      width: 100%;
+      text-align: center; }
+  .modal-content .mail {
+    flex-direction: column; }
   .modal-content .check-in {
     display: flex;
-    justify-content: flex-end; }
+    justify-content: space-between;
+    align-items: center; }
 
 .control-label {
   font-weight: normal; }

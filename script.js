@@ -1,6 +1,23 @@
 /**
  * Created by Ksenya on 02.06.2017.
  */
+//
+//var object = ['Vasya', 'Pupkin'];
+//
+//
+//
+//const showDetails = ({name, lastName}) => {
+//
+//    return `Hello ${name} ${lastName}`
+//};
+//
+//var showDetails2 = function(object){
+//    var name = object.name;
+//    var lastName = object.lastName;
+//    var age = object.age;
+//    var gender = object.gender;
+//    return 'Hello ' + name + ' ' + lastName
+//}
 
 $(document).ready(function(){
 
@@ -47,18 +64,18 @@ $(document).ready(function(){
         $(".phone").mask("+38(999) 999-99-99");
         $('.email').blur(function() {
             if($(this).val() != '') {
-                var a;
                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
                 if(pattern.test($(this).val())){
                     $(this).css({'border' : '2px solid #569b44'});
-                    $('.email').text('Верно');
+                    $('.valid').text('Верно');
                 } else {
                     $(this).css({'border' : '2px solid #ff0000'});
-                    $('.email').text('Не верно');
+                    $('.valid').text('Не верно !');
+                    
                 }
             } else {
                 $(this).css({'border' : '2px solid #ff0000'});
-                $('#result-regi').text('Поле email не должно быть пустым');
+                $('.valid').text('Поле email не должно быть пустым');
             }
         });
     });
@@ -68,7 +85,6 @@ $(document).ready(function(){
         if (modal.find('.name').val() == '' || $('.email').val() == '' || $('.phone').val() == '' || $('.password').val() == '' ){
             modal.find('.result-regi').text('Заполните все поля!');
         }else {
-
             var output =
                 '<div class="block-authorisation">'+
                     '<span>' + modal.find('.name').val() + '</span>'+
