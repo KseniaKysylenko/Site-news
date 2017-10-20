@@ -67,12 +67,13 @@ $(document).ready(function(){
                 var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
 
                 if($(this).val().search(pattern) == 0){
+                    $('.valid').text('Верно');
                     $('#submit').attr('disabled', false);
-                    $(this).addClass('ok');
+                    $(this).removeClass('error').addClass('ok');
 
                 } else {
                     $('.valid').text('Введите корректный e-mail адрес');
-                   console.log($('#submit').attr('disabled', true)) ;
+                    $('#submit').attr('disabled', true) ;
                     $(this).removeClass('ok').addClass('error');
                 }
             } else {
@@ -83,7 +84,7 @@ $(document).ready(function(){
         });
     });
 
-    $('.check-in').on('click', function(){
+    $('#submit').on('click', function(){
         var modal  = $('#myModal-regi');
 
         if (modal.find('.name').val() == '' || $('.email').val() == '' || $('.phone').val() == '' || $('.password').val() == '' ){
