@@ -18,53 +18,16 @@
 //    var gender = object.gender;
 //    return 'Hello ' + name + ' ' + lastName
 //}
-
 $(document).ready(function(){
 
-    //var inp_name = document.querySelector('input[name=name]');
-    //var inp_email = document.querySelector('input[name=email]');
-    //var inp_phone = document.querySelector('input[name=phone]');
-    //var inp_password = document.querySelector('input[name=password]');
-    //
-    //document.querySelector('.check-in').onclick = function(){
-    //    var params = 'name=' + inp_name.value + '&'
-    //        + 'email=' + inp_email.value + '&'
-    //        + 'phone=' + inp_phone.value + '&'
-    //        + 'password=' + inp_password.value;
-    //    ajaxPost(params);
-    //
-    //};
-    //
-    //function ajaxPost(params) {
-    //    var request = new XMLHttpRequest();
-    //    request.onreadystatechange = function(){
-    //        if(request.readyState == 4 && request.status == 200) {
-    //            if(request.responseText == '1'){
-    //                document.querySelector('#result').innerHTML = 'Вы успешно пройшли регистрацию';
-    //                document.querySelector('.modal-body').style.display = 'none';
-    //                //if()
-    //                console.log(document.querySelector('.block-authorisation').text('Привет' + inp_name.value))
-    //                document.querySelector('.block-authorisation').style.display = 'none';
-    //
-    //            }else {
-    //                document.querySelector('#result').innerHTML = request.responseText;
-    //            }
-    //
-    //        }
-    //    };
-    //
-    //    request.open('POST', 'form.php');
-    //    request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-    //    request.send(params);
-    //}
 
     jQuery(function($){
         //$("#date").mask("99/99/9999",{placeholder:"+38(050) 660-11-02"});
 
         $(".phone").mask("+38(999) 999-99-99");
-        $('.email').blur(function() {
+        $('.email').blur(function() { //keyup - срабатывает на лету, недостаток при использовании мыши
             if($(this).val() != '') {
-                var pattern = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
+                var pattern = /^([a-z0-9_-])+@[a-z0-9-]+\.([a-z]{2,6}\.)?[a-z]{2,6}$/i;
 
                 if($(this).val().search(pattern) == 0){
                     $('.valid').text('Верно');
@@ -148,10 +111,10 @@ $(document).ready(function(){
     function get_timer() {
 
         //Дата для обратного отсчета
-        var date_new = "October 22,2017 22:00";
+        var date_t = new Date().getTime() + 1.5 * 60 * 60 * 1000;
 
         //Объект даты для обратного отсчета
-        var date_t = new Date(date_new);
+        //var date_t = new Date(date_new);
         //Объект текущей даты
         var date = new Date();
         //Вычисляем сколько миллисекунд пройдет
